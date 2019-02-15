@@ -1,5 +1,10 @@
 # Ferds Validator
 
+Ferds Validator is a simple validator that is intended for processing data validation in a concise manner. Ferds Validator has several advantages over other packages, such as:
+
+* Use only one variable to perform various validations
+* Validation looks more familiar to those of you who are accustomed to using the PHP programming language with the CodeIgniter and Laravel framework
+
 ## Features
 
 Now, let’s describe the features:
