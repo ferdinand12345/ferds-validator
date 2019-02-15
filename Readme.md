@@ -2,7 +2,7 @@
 
 ## Features
 
-Now, let’s describe the ideal features:
+Now, let’s describe the features:
 
 - Check for required data.
 - Simple basic validation rules
@@ -14,7 +14,7 @@ $ npm install ferds-validator
 
 ## Usages
 
-### Simple validation usage
+### Basic validation usage
 
 Examples of simple use :
 
@@ -61,10 +61,48 @@ Raw output :
 }
 ```
 
+### Simple usage with Express
+
+Examples of simple use with express :
+
+```javascript
+var validator = require( 'ferds-validator' );
+var setup = [
+	{
+		"name": "Alpha Only", // field description
+		"value": "ABC", // value that will be validated
+		"rules": "alpha" // validate alphabet characters only
+	},
+	{
+		"name": "Required Alpha Only",
+		"value": "",
+		"rules": "required|alpha"
+	},
+	{
+		"name": "Age",
+		"value": 25,
+		"rules": "required|numeric|greater_than_equal_to(30)" // Return false, because the value must be greater or equal to 30
+	}
+}
+var run_validator = validator.run( setup ); // Set to variable
+console.log( run_validator ); // Raw output
+
+if ( run_validator.status == false ) {
+	// your code...
+}
+else {
+	// your code...
+}
+```
+
+
 ## Rule Reference
 
 The following is a list of all the native rules that are available to use:
 
-| Rule | Parameter | Description |
-| ------------- |:-------------:|:-------------:|
-| alpha | NO | Returns FALSE if the form element contains anything other than alphabetical characters.	 |
+| Rule | Parameter | Description | Examples |
+| ------------- |:-------------:|:-------------:|:-------------:|
+| alpha | No | Returns FALSE if the form element contains anything other than alphabetical characters. |
+| alpha_numeric | No | Returns FALSE if the form element contains anything other than alpha-numeric characters. |
+| email | No | Returns FALSE if the form element does not contain a valid email address. |
+| greater_than | Yes | Returns FALSE if the form element is less than or equal to the parameter value or not numeric. | greater_than(10)

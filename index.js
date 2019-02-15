@@ -366,16 +366,16 @@ exports.fn = function( fn, string, comparison = '' ) {
  */
 exports.run = function( setup ) {
 
-	var result = [];
-		result['status'] = false;
-		result['message'] = '';
-		result['error_lists'] = []
+	var result = {};
+		result.status = false;
+		result.message = '';
+		result.error_lists = [];
 	var error_count = 0;
 
 	if ( typeof setup === 'object' ) {
 		if ( setup ) {
 			if ( setup.length > 0 ) {
-				result['message'] = 'Unfortunately, some error has occured.';
+				result.message = 'Unfortunately, some error has occured.';
 
 				setup.forEach( function( data ) {
 					if ( !!data.rules ) {
@@ -384,7 +384,7 @@ exports.run = function( setup ) {
 							var matches = regexp.exec( rule );
 							if ( matches == null && rule != null ) {
 								if ( exports.fn( rule, data.value, '' ) == false ) {
-									result['error_lists'].push( 
+									result.error_lists.push( 
 										exports.error_message( rule, data.name, data.value, '' )
 									);
 									error_count++;
@@ -395,7 +395,7 @@ exports.run = function( setup ) {
 								var comparison = matches[1].split( ',' );
 								if ( fn_split != null ) {
 									if ( exports.fn( fn_split, data.value, comparison[0] ) == false ) {
-										result['error_lists'].push( 
+										result.error_lists.push( 
 											exports.error_message( fn_split, data.name, data.value, comparison )
 										);
 										error_count++;
@@ -407,17 +407,17 @@ exports.run = function( setup ) {
 				} );
 
 				if ( error_count == 0 ) {
-					result['status'] = true;
-					result['message'] = 'Validated.';
+					result.status = true;
+					result.message = 'Validated.';
 				}
 			}
 			else {
-				result['message'] = 'Validaton setup is empty';
+				result.message = 'Validaton setup is empty';
 			}
 		}
 	}
 	else {
-		result['message'] = 'Validaton setup is not object';
+		result.message = 'Validaton setup is not object';
 	}
 
 	return result;
