@@ -65,6 +65,6 @@ Raw output :
 
 The following is a list of all the native rules that are available to use:
 
-| Rule          | Parameter     | Description                                                                                |
-| ------------- |:-------------:| ------------------------------------------------------------------------------------------:|
-| alpha.        | NO            | Returns FALSE if the form element contains anything other than alphabetical characters.	 |
+| Rule | Parameter | Description |
+| ------------- |:-------------:|:-------------:|
+| alpha | NO | Returns FALSE if the form element contains anything other than alphabetical characters.	 |
