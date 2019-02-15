@@ -1,11 +1,24 @@
 {
 	"name": "ferds-validator",
 	"version": "1.0.2",
-	"description": "NodeJS Form Validator",
+	"description": "Ferds Validator for NodeJS",
 	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/verdomazeg/ferds-validator.git"
 	},
-	"author": "Ferds (Email: ferdshinodas@gmail.com, IG: ferd.shinoda)",
-	"license": "ISC"
+	"keywords": [
+		"express",
+		"validator",
+		"validation",
+		"validate",
+		"longitude",
+		"latitude"
+	],
+	"author": {
+		"name": "Fedinand",
+		"email": "ferdshinodas@gmail.com"
+	},
+	"license": "MIT"
 }
+
