@@ -16,7 +16,7 @@ $ npm install ferds-validator
 
 ### Simple validation usage
 
-Examples of simple use
+Examples of simple use :
 
 ```javascript
 var validator = require( 'ferds-validator' );
@@ -48,7 +48,8 @@ else {
 }
 ```
 
-### Output validation
+Raw output :
+
 ```json
 {
 	"status": false,
