@@ -102,7 +102,7 @@ The following is a list of all the native rules that are available to use:
 
 | Rule | Parameter | Description | Examples |
 | ------------- |:-------------:|:-------------:|:-------------:|
-| alpha | No | Returns FALSE if the form element contains anything other than alphabetical characters. |
-| alpha_numeric | No | Returns FALSE if the form element contains anything other than alpha-numeric characters. |
-| email | No | Returns FALSE if the form element does not contain a valid email address. |
-| greater_than | Yes | Returns FALSE if the form element is less than or equal to the parameter value or not numeric. | greater_than(10)
+| alpha | No | Returns FALSE if the form element contains anything other than alphabetical characters. | |
+| alpha_numeric | No | Returns FALSE if the form element contains anything other than alpha-numeric characters. | |
+| email | No | Returns FALSE if the form element does not contain a valid email address. | |
+| greater_than | Yes | Returns FALSE if the form element is less than or equal to the parameter value or not numeric. | greater_than(10) |
