@@ -65,8 +65,6 @@ Raw output :
 
 The following is a list of all the native rules that are available to use:
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Rule          | Parameter     | Description                                                                                |
+| ------------- |:-------------:| ------------------------------------------------------------------------------------------:|
+| alpha.        | NO            | Returns FALSE if the form element contains anything other than alphabetical characters.	 |
