@@ -51,11 +51,11 @@ else {
 ### Output validation
 ```json
 {
-	status: false,
-	message: 'Unfortunately, some error has occured.',
-	error_lists: [
-		'The Required Alpha Only field is required. ',
-		'The Age field must contain a number greater than or equal to 30. '
+	"status": false,
+	"message": "Unfortunately, some error has occured.",
+	"error_lists": [
+		"The Required Alpha Only field is required. ",
+		"The Age field must contain a number greater than or equal to 30. "
 	]
 }
 ```
