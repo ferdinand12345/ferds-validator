@@ -150,4 +150,4 @@ The following is a list of all the native rules that are available to use:
 
 ## Author
 
-Ferdinand <ferdshinodas@gmail.com>
+Ferdinand [<ferdshinodas@gmail.com>]
