@@ -111,3 +111,14 @@ The following is a list of all the native rules that are available to use:
 | alpha_numeric | No | Returns FALSE if the form element contains anything other than alpha-numeric characters. | |
 | email | No | Returns FALSE if the form element does not contain a valid email address. | |
 | greater_than | Yes | Returns FALSE if the form element is less than or equal to the parameter value or not numeric. | greater_than(10) |
+| greater_than_equal_to | Yes | Returns FALSE if the form element is less than the parameter value, or not numeric. | greater_than_equal_to(243) |
+| latitude | No | Returns FALSE if the form element is values doesn't between -90 to 90 degrees. | |
+| longitude | No | Returns FALSE if the form element is values doesn't between -180 to 180 degrees. | |
+| less_than | Yes | Returns FALSE if the form element is greater than or equal to the parameter value or not numeric. | less_than(10) |
+| less_than_equal_to | Yes | Returns FALSE if the form element is greater than the parameter value, or not numeric. | less_than_equal_to(243) |
+
+
+
+
+
+
