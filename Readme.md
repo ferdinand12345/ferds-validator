@@ -94,8 +94,8 @@ app.post( '/test', ( req, res ) => {
 			"rules": "required|regex_match(/^[a-zA-Z0-9]+$/)"
 		},
 		{
-			"name": "Regex Match 1",
-			"value": req.body.url,
+			"name": "Website URL",
+			"value": req.body.website_url,
 			"rules": "required|url"
 		},
 		{
@@ -116,7 +116,7 @@ app.post( '/test', ( req, res ) => {
 		res.json( {
 			status: false,
 			message: "Please check your input.",
-			error_lists: run_validator.error_lists
+			error_lists: run_validator.error_lists // Show error validation lists
 		} );
 	}
 	else {
