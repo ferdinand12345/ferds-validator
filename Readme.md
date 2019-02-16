@@ -144,7 +144,7 @@ The following is a list of all the native rules that are available to use:
 | less_than_equal_to | Yes | Returns FALSE if the form element is greater than the parameter value, or not numeric. | less_than_equal_to(243) |
 | numeric | No | Returns FALSE if the form element contains anything other than numeric characters. | |
 | ip_address | No | Returns FALSE if the supplied IP address is not valid. Accepts an optional parameter of ‘ipv4’ or ‘ipv6’ to specify an IP format. | |
-| regex_match | No | Returns FALSE if the form element does not match the regular expression. | |
+| regex_match | Yes | Returns FALSE if the form element does not match the regular expression. | regex_match(/^[a-zA-Z0-9]+$/) |
 | required | No | Returns FALSE if the form element is empty. | |
 | url | No | Returns FALSE if the form element does not contain a valid URL. | |
 

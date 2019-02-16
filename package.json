@@ -1,6 +1,6 @@
 {
 	"name": "ferds-validator",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Ferds Validator for NodeJS",
 	"main": "index.js",
 	"repository": {
