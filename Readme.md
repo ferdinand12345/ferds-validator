@@ -148,6 +148,8 @@ The following is a list of all the native rules that are available to use:
 | required | No | Returns FALSE if the form element is empty. | |
 | url | No | Returns FALSE if the form element does not contain a valid URL. | |
 
+## Author
+Ferdinand (ferdshinodas@gmail.com)
 
 
 
