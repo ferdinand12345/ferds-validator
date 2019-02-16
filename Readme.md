@@ -149,8 +149,6 @@ The following is a list of all the native rules that are available to use:
 | url | No | Returns FALSE if the form element does not contain a valid URL. | |
 
 ## Author
-Ferdinand (ferdshinodas@gmail.com)
 
-
-
-
+Name: Ferdinand
+Email: ferdshinodas@gmail.com
