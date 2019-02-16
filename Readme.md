@@ -71,33 +71,59 @@ Raw output :
 Examples of simple use with express :
 
 ```javascript
-var validator = require( 'ferds-validator' );
-var setup = [
-	{
-		"name": "Alpha Only", // field description
-		"value": "ABC", // value that will be validated
-		"rules": "alpha" // validate alphabet characters only
-	},
-	{
-		"name": "Required Alpha Only",
-		"value": "",
-		"rules": "required|alpha"
-	},
-	{
-		"name": "Age",
-		"value": 25,
-		"rules": "required|numeric|greater_than_equal_to(30)" // Return false, because the value must be greater or equal to 30
-	}
-}
-var run_validator = validator.run( setup ); // Set to variable
-console.log( run_validator ); // Raw output
+const express = require( 'express' );
+const body_parser = require( 'body-parser' );
+const app = express();
+const validator = require( 'ferds-validator' );
 
-if ( run_validator.status == false ) {
-	// your code...
-}
-else {
-	// your code...
-}
+app.use( body_parser.urlencoded( { extended: false } ) );
+app.use( body_parser.json() );
+app.listen( 5000, () => {
+	console.log( 'Tester Package running on port 5000' );
+} );
+app.post( '/test', ( req, res ) => {
+	var setup = [
+		{
+			"name": "IP Address",
+			"value": req.body.ip_address,
+			"rules": "ip_address"
+		},
+		{
+			"name": "Regex Match",
+			"value": req.body.regex_match,
+			"rules": "required|regex_match(/^[a-zA-Z0-9]+$/)"
+		},
+		{
+			"name": "Regex Match 1",
+			"value": req.body.url,
+			"rules": "required|url"
+		},
+		{
+			"name": "Longitude",
+			"value": req.body.longitude,
+			"rules": "required|longitude"
+		},
+		{
+			"name": "Latitude 1",
+			"value": req.body.latitude,
+			"rules": "required|latitude"
+		},
+	];
+	var run_validator = validator.run( setup ); // Set to variable
+
+	if ( run_validator.status == false ) {
+		// Sample
+		res.json( {
+			status: false,
+			message: "Please check your input.",
+			error_lists: run_validator.error_lists
+		} );
+	}
+	else {
+		// your code if validation is true...
+	}
+} );
+
 ```
 
 
