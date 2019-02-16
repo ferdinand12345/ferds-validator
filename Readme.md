@@ -14,9 +14,9 @@ Now, let’s describe the features:
 - Verify that the data is of the correct type, and meets the correct criteria. For example, if a username is submitted it must be validated to contain only permitted characters. It must be of a minimum length, and not exceed a maximum length. Etc.
 
 ## Installation
-
+```
 $ npm install ferds-validator
-
+```
 ## Usages
 
 ### Basic validation usage
