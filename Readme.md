@@ -172,9 +172,9 @@ The following is a list of all the native rules that are available to use:
 | less_than | Yes | Returns FALSE if the form element is greater than or equal to the parameter value or not numeric. | less_than(10) |
 | less_than_equal_to | Yes | Returns FALSE if the form element is greater than the parameter value, or not numeric. | less_than_equal_to(243) |
 | max_length | Yes | Returns FALSE if the form element is longer than the parameter value. | max_length(2) |
-| max_length_equal_to | Yes | Returns FALSE if the form element is longer than or equal to the parameter value. | max_length_equal_to(2) |
+| max_length_equal_to | Yes | Returns FALSE if the form element is longer than or not equal to the parameter value. | max_length_equal_to(2) |
 | min_length | Yes | Returns FALSE if the form element is shorter than the parameter value. | min_length(5) |
-| min_length_equal | Yes | Returns FALSE if the form element is shorter than or equal to the parameter value. | min_length_equal_to(7) |
+| min_length_equal | Yes | Returns FALSE if the form element is shorter than or not equal to the parameter value. | min_length_equal_to(7) |
 | numeric | No | Returns FALSE if the form element contains anything other than numeric characters. | |
 | ip_address | No | Returns FALSE if the supplied IP address is not valid. Accepts an optional parameter of ‘ipv4’ or ‘ipv6’ to specify an IP format. | |
 | regex_match | Yes | Returns FALSE if the form element does not match the regular expression. | regex_match(/^[a-zA-Z0-9]+$/) |
