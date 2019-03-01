@@ -7,6 +7,7 @@
   * Adding new function min_length
   * Adding new function min_length_equal_to
   * Adding new function valid_date
+  * Adding new function alpha_spaces
   * Modify Readme
 
 1.0.4 / 2019-02-20
