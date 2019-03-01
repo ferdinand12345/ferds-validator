@@ -164,7 +164,7 @@ The following is a list of all the native rules that are available to use:
 | alpha_numeric | No | Returns FALSE if the form element contains anything other than alpha-numeric characters. | |
 | alpha_numeric_spaces | No | Returns FALSE if the form element contains anything other than alpha-numeric characters or spaces. Should be used after trim to avoid spaces at the beginning or end. | |
 | alpha_spaces | No | Returns FALSE if the form element contains anything other than alphabetical characters or spaces. | |
-| date | Yes | Returns FALSE if the form element does not contain a valid email address. | * date(YYYY-MM-DD) |
+| date | Yes | Returns FALSE if the form element does not contain a valid date. The allowed format is DD-MM-YYYY, YYYY-MM-DD, DD/MM/YYYY, YYYY/MM/DD, DD.MM.YYYY, YYYY.MM.DD,  | date(YYYY-MM-DD) |
 | email | No | Returns FALSE if the form element does not contain a valid email address. | |
 | greater_than | Yes | Returns FALSE if the form element is less than or equal to the parameter value or not numeric. | greater_than(10) |
 | greater_than_equal_to | Yes | Returns FALSE if the form element is less than the parameter value, or not numeric. | greater_than_equal_to(243) |
