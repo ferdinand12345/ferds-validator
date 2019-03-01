@@ -1,7 +1,24 @@
+1.0.5 / 2019-03-02
+==================
+
+  * Adding new function exact_length
+  * Adding new function max_length
+  * Adding new function max_length_equal_to
+  * Adding new function min_length
+  * Adding new function min_length_equal_to
+  * Adding new function valid_date
+  * Modify Readme
+
+1.0.4 / 2019-02-20
+==================
+
+  * Adding new function alpha_numeric_spaces
+  * Modify Readme
+
 1.0.3 / 2019-02-16
 ==================
 
-  * Editing Readme
+  * Modify Readme
 
 1.0.2 / 2019-02-12
 ==================

@@ -25,7 +25,7 @@ Examples of simple use :
 
 ```javascript
 var validator = require( 'ferds-validator' );
-var setup = [
+var rules = [
 	{
 		"name": "Alpha Only", // field description
 		"value": "ABC", // value that will be validated
@@ -36,13 +36,38 @@ var setup = [
 		"value": "",
 		"rules": "required|alpha"
 	},
-	{
+	{ // Return false, because the value must be greater or equal to 30
 		"name": "Age",
 		"value": 25,
-		"rules": "required|numeric|greater_than_equal_to(30)" // Return false, because the value must be greater or equal to 30
-	}
+		"rules": "required|numeric|greater_than_equal_to(30)"
+	},
+	{ // Return False
+		"name": "Exact Length",
+		"value": "ABCDE92",
+		"rules": "required|exact_length(5)|alpha"
+	},
+	{ // Return False
+		"name": "Minimum Length",
+		"value": "123123",
+		"rules": "required|min_length(2)|numeric"
+	},
+	{ // Return True
+		"name": "Maximum Length",
+		"value": "123123",
+		"rules": "required|max_length(10)|numeric"
+	},
+	{ // Return True
+		"name": "Maximum Length Or Equal To",
+		"value": "AB123",
+		"rules": "required|max_length_equal_to(5)|alpha_numeric"
+	},
+	{ // Return True
+		"name": "Birth Date",
+		"value": "1993-11-267",
+		"rules": "required|date(YYYY-MM-DD)"
+	},
 }
-var run_validator = validator.run( setup ); // Set to variable
+var run_validator = validator.run( rules ); // Set to variable
 console.log( run_validator ); // Raw output
 
 if ( run_validator.status == false ) {
@@ -61,7 +86,10 @@ Raw output :
 	"message": "Unfortunately, some error has occured.",
 	"error_lists": [
 		"The Required Alpha Only field is required. ",
-		"The Age field must contain a number greater than or equal to 30. "
+		"The Age field must contain a number greater than or equal to 30. ",
+		"The Exact Length field must be exactly 5 characters in length. ",
+		"The Exact Length field may only contain alphabetical characters. ",
+		"The Birth Date field must contain a valid date with format YYYY-MM-DD. "
 	]
 }
 ```
@@ -82,7 +110,7 @@ app.listen( 5000, () => {
 	console.log( 'Tester Package running on port 5000' );
 } );
 app.post( '/test', ( req, res ) => {
-	var setup = [
+	var rules = [
 		{
 			"name": "IP Address",
 			"value": req.body.ip_address,
@@ -109,7 +137,7 @@ app.post( '/test', ( req, res ) => {
 			"rules": "required|latitude"
 		},
 	];
-	var run_validator = validator.run( setup ); // Set to variable
+	var run_validator = validator.run( rules ); // Set to variable
 
 	if ( run_validator.status == false ) {
 		// Sample
@@ -135,6 +163,7 @@ The following is a list of all the native rules that are available to use:
 | ------------- |:-------------:|:-------------:|:-------------:|
 | alpha | No | Returns FALSE if the form element contains anything other than alphabetical characters. | |
 | alpha_numeric | No | Returns FALSE if the form element contains anything other than alpha-numeric characters. | |
+| alpha_numeric_spaces | No | Returns FALSE if the form element contains anything other than alpha-numeric characters or spaces. Should be used after trim to avoid spaces at the beginning or end. | |
 | email | No | Returns FALSE if the form element does not contain a valid email address. | |
 | greater_than | Yes | Returns FALSE if the form element is less than or equal to the parameter value or not numeric. | greater_than(10) |
 | greater_than_equal_to | Yes | Returns FALSE if the form element is less than the parameter value, or not numeric. | greater_than_equal_to(243) |
